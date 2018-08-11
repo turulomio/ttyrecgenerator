@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TooManyFiles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-11 18:53+0200\n"
+"POT-Creation-Date: 2018-08-11 19:10+0200\n"
 "PO-Revision-Date: 2015-03-22 18:51+0100\n"
 "Last-Translator: root <turulomio@yahoo.es>\n"
 "Language-Team: Spanish\n"
@@ -29,6 +29,21 @@ msgstr "Esta aplicación tiene los siguientes parámetros obligatorios"
 
 msgid "Create two directories called 'example' and 'example_directories' in the current working directory and fill it with example files with date and time patterns."
 msgstr "Crea dos directorios de nombre 'example' y 'example_directories' en el directorio actual y los llena con ficheros de ejemplo que tengan patrónes de fecha y hora."
+
+msgid "Create an animated gif/video from the output of the program passed as parameter"
+msgstr "Crea un gif animado/video de la salida del programa pasado como parámetro"
+
+msgid "Developed by Mariano Muñoz 2018-{}"
+msgstr "Desarrollado por Mariano Muñoz 2018-{}"
+
+msgid "Path to program"
+msgstr "Ruta al programa"
+
+msgid "Ttyrec output path"
+msgstr "Ruta de salida de Ttyrec"
+
+msgid "Makes a simulation and doesn't remove files"
+msgstr "Realiza una simulación y no borra los ficheros"
 
 msgid "Sets output language"
 msgstr "Establece el lenguaje de salida"
@@ -74,9 +89,6 @@ msgstr "Listamos los ficheros que han quedado"
 
 msgid "That's all"
 msgstr "Eso es todo"
-
-#~ msgid "Developed by Mariano Muñoz 2018-{}"
-#~ msgstr "Desarrollado por Mariano Muñoz 2018-{}"
 
 #~ msgid "Generate docs and i18n"
 #~ msgstr "Generar documentación e internacionalización"
@@ -189,9 +201,6 @@ msgstr "Eso es todo"
 #~ msgid "Removes files permanently"
 #~ msgstr "Borra los ficheros permanentemente"
 
-#~ msgid "Makes a simulation and doesn't remove files"
-#~ msgstr "Realiza una simulación y no borra los ficheros"
-
 #~ msgid "Modifiers to use with --remove and --pretend"
 #~ msgstr "Parámetros a usar con --remove y --pretend"
 
@@ -215,15 +224,6 @@ msgstr "Eso es todo"
 
 #~ msgid "The number of files too young to delete can't be bigger than the maximum number of files to store"
 #~ msgstr "El número de ficheros demasiado recientes para ser borrados no puede ser mayor que el máximo número de ficheros a guardar"
-
-#~ msgid "Create an animated gif/video from the output of the program passed as parameter"
-#~ msgstr "Crea un gif animado/video de la salida del programa pasado como parámetro"
-
-#~ msgid "Path to program"
-#~ msgstr "Ruta al programa"
-
-#~ msgid "Ttyrec output path"
-#~ msgstr "Ruta de salida de Ttyrec"
 
 #~ msgid "Remove innecesary files with a date and time pattern in the current subdirectory."
 #~ msgstr "Borra ficheros no necesarios que tengan un patrón de fecha y hora en el subdirectorio actual."

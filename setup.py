@@ -66,7 +66,7 @@ class Doc(Command):
 
     def run(self):
         #es
-        os.system("xgettext -L Python --no-wrap --no-location --from-code='UTF-8' -o locale/ttyrecgenerator.pot *.py doc/ttyrec/*.py")
+        os.system("xgettext -L Python --no-wrap --no-location --from-code='UTF-8' -o locale/ttyrecgenerator.pot *.py ttyrecgenerator/*.py doc/ttyrec/*.py")
         os.system("msgmerge -N --no-wrap -U locale/es.po locale/ttyrecgenerator.pot")
         os.system("msgfmt -cv -o locale/es/LC_MESSAGES/ttyrecgenerator.mo locale/es.po")
 

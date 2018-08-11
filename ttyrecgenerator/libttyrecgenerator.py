@@ -60,6 +60,3 @@ class RecSession:
             lang1=gettext.translation('toomanyfiles', '/usr/share/locale', languages=[language])
             lang1.install()
 
-
-def main():
-    print("Esto es un main")

@@ -10,8 +10,8 @@ import os
 
 from .libttyrecgenerator import RecSession 
 
-language = gettext.translation ('ttyrecgenerator', 'locale' )
-language.install()
+#language = gettext.translation ('ttyrecgenerator', 'locale' )
+#language.install()
 
 __version__ = '0.1.0'
 __versiondate__=datetime.date(2018,8,11)

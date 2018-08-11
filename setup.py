@@ -97,9 +97,6 @@ class Doc(Command):
         man.paragraph("--create_example", 2, True)
         man.paragraph(_("Create two directories called 'example' and 'example_directories' in the current working directory and fill it with example files with date and time patterns."), 3)
         man.save()
-
-
-
     ########################################################################
 
 setup(name='ttyrecgenerator',

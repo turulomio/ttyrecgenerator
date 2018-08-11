@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TooManyFiles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-11 13:16+0200\n"
+"POT-Creation-Date: 2018-08-11 18:53+0200\n"
 "PO-Revision-Date: 2015-03-22 18:51+0100\n"
 "Last-Translator: root <turulomio@yahoo.es>\n"
 "Language-Team: Spanish\n"
@@ -29,30 +29,6 @@ msgstr "Esta aplicación tiene los siguientes parámetros obligatorios"
 
 msgid "Create two directories called 'example' and 'example_directories' in the current working directory and fill it with example files with date and time patterns."
 msgstr "Crea dos directorios de nombre 'example' y 'example_directories' en el directorio actual y los llena con ficheros de ejemplo que tengan patrónes de fecha y hora."
-
-msgid "Developed by Mariano Muñoz 2018-{}"
-msgstr "Desarrollado por Mariano Muñoz 2018-{}"
-
-msgid "Generate docs and i18n"
-msgstr "Generar documentación e internacionalización"
-
-msgid "Generate doxygen api documentation"
-msgstr "Generar la documentación de la api con Doxygen"
-
-msgid "Directory to install app. / recomended"
-msgstr "Directorio en el el que instalar la applicación. Se recomienda en /"
-
-msgid "Uninstall. / recomended"
-msgstr "Desinstalar. Se recomienda en /"
-
-msgid "Make a HOWTO video and gif "
-msgstr "Genera un tutorial en un video y en un fichero gif "
-
-msgid "Make a sources tar"
-msgstr "Crea un fichero tar con el código fuente"
-
-msgid "Python path"
-msgstr "Ruta a Python"
 
 msgid "Sets output language"
 msgstr "Establece el lenguaje de salida"
@@ -98,6 +74,30 @@ msgstr "Listamos los ficheros que han quedado"
 
 msgid "That's all"
 msgstr "Eso es todo"
+
+#~ msgid "Developed by Mariano Muñoz 2018-{}"
+#~ msgstr "Desarrollado por Mariano Muñoz 2018-{}"
+
+#~ msgid "Generate docs and i18n"
+#~ msgstr "Generar documentación e internacionalización"
+
+#~ msgid "Generate doxygen api documentation"
+#~ msgstr "Generar la documentación de la api con Doxygen"
+
+#~ msgid "Directory to install app. / recomended"
+#~ msgstr "Directorio en el el que instalar la applicación. Se recomienda en /"
+
+#~ msgid "Uninstall. / recomended"
+#~ msgstr "Desinstalar. Se recomienda en /"
+
+#~ msgid "Make a HOWTO video and gif "
+#~ msgstr "Genera un tutorial en un video y en un fichero gif "
+
+#~ msgid "Make a sources tar"
+#~ msgstr "Crea un fichero tar con el código fuente"
+
+#~ msgid "Python path"
+#~ msgstr "Ruta a Python"
 
 #~ msgid "Makes a simulation selecting which files will be deleted when --remove parameter is used."
 #~ msgstr "Realiza una simulación seleccionando que ficheros serán borrados cuando se use el parámetro --remove."

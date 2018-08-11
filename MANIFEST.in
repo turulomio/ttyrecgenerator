@@ -1,6 +1,5 @@
-include GPL-3.txt CHANGELOG.txt *.py
+include GPL-3.txt *.py
 recursive-include locale *.po *.mo
-recursive-include locale *.1
-recursive-include doc/ttyrec *.gif
+recursive-include man *.1
 prune __pycache__
 global-exclude *.pyc

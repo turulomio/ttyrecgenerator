@@ -3,7 +3,15 @@
 #from .ansi import Fore, Back, Style, Cursor
 #from .ansitowin32 import AnsiToWin32
 import datetime
-from .libttyrecgenerator import RecSession
+
+import locale
+import gettext
+import os
+
+from .libttyrecgenerator import RecSession 
+
+language = gettext.translation ('ttyrecgenerator', 'locale' )
+language.install()
+
 __version__ = '0.1.0'
 __versiondate__=datetime.date(2018,8,11)
-

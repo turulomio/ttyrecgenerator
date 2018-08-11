@@ -12,7 +12,7 @@ import subprocess
 #If you are localizing your module, you must take care not to make global changes, e.g. to the built-in namespace. You should not use the GNU gettext API but instead the class-based API.
 #Let’s say your module is called “spam” and the module’s various natural language translation .mo files reside in /usr/share/locale in GNU gettext format. Here’s what you would put at the top of your module:
 
-t = gettext.translation('toomanyfiles', '/usr/share/locale')
+t = gettext.translation('ttyrecgenerator', 'locale')
 _ = t.gettext
 
 

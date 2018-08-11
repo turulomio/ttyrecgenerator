@@ -49,17 +49,6 @@ def merge_i18n():
         if flag:
             os.system("%s %s %s.in %s" % (cmd, flag, infile, infile))
 
-
-class my_build:#(build):
-    def run(self, *args):
-        build.run(self, *args)
-
-        for lang in langs:
-            mkmo(lang)
-
-        merge_i18n()
-
-
 def polist():
     dst_tmpl = "share/locale/%s/LC_MESSAGES/"
     polist = [(dst_tmpl % x, ["%s/%s.mo" % (modir(x), package)]) for x in langs]
@@ -200,16 +189,12 @@ setup(name='ttyrecgenerator',
       license='GPL-3',
       packages=['ttyrecgenerator'],
       entry_points = {'console_scripts': ['ttyrecgenerator=ttyrecgenerator.cmd_ttyrecgenerator:main',
-                                         ],
-#                      "distutils.commands": ["doxygen = doxygen",
-#                                            ],
+                                          ],
                      },
                      
         
-      data_files=[
-        ('share/icons/hicolor/16x16/apps', ['icons/16x16/mypackage.png']),
-        ...
-               ] + polist(),
+      data_files=[ ('locale/es/LC_MESSAGES/', ['locale/es/LC_MESSAGES/ttyrecgenerator.mo']),
+               ],
                
     cmdclass={
         'doxygen': Doxygen,

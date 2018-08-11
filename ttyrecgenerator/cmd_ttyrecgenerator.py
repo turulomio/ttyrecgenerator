@@ -12,7 +12,7 @@ import subprocess
 from .__init__ import __version__, __versiondate__
 
 # I had a lot of problems with UTF-8. LANG must be es_ES.UTF-8 to work. Nuevo sistema2
-gettext.install('ttyrecgenerator')
+gettext.install('ttyrecgenerator','locale')
 
 
 def main():

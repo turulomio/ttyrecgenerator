@@ -4,8 +4,8 @@ import datetime
 import os
 from subprocess import call
 from multiprocessing import cpu_count
-from libmangenerator import Man
-from ttyrecgenerator import version_date
+from mangenerator import Man
+from ttyrecgenerator import __version__
 import gettext
 
 
@@ -92,7 +92,7 @@ def mangenerator(language):
 
 if __name__ == '__main__':
     start=datetime.datetime.now()
-    parser=argparse.ArgumentParser(prog='Makefile.py', description='Makefile in python', epilog=_("Developed by Mariano Muñoz 2018-{}".format(version_date().year)), formatter_class=argparse.RawTextHelpFormatter)
+    parser=argparse.ArgumentParser(prog='Makefile.py', description='Makefile in python', epilog=_("Developed by Mariano Muñoz 2018-{}".format(datetime.date.today().year)), formatter_class=argparse.RawTextHelpFormatter)
     group=parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--doc', help=_("Generate docs and i18n"),action="store_true",default=False)
     group.add_argument('--doxygen', help=_("Generate doxygen api documentation"), action="store_true", default=False)

@@ -1,8 +1,5 @@
-#!/usr/bin/python3
 ## @package libttyrecgenerator
 ## @brief Library to generate gifs and video from console output
-## 
-## This library belongs to too-many-files project and has it's own version number, so you only must edit it in that project
 
 import argparse
 import time
@@ -12,25 +9,12 @@ import gettext
 import os
 import subprocess
 
-
-
-
-#from toomanyfiles import version, version_date
-
-
-
 #If you are localizing your module, you must take care not to make global changes, e.g. to the built-in namespace. You should not use the GNU gettext API but instead the class-based API.
 #Let’s say your module is called “spam” and the module’s various natural language translation .mo files reside in /usr/share/locale in GNU gettext format. Here’s what you would put at the top of your module:
 
 t = gettext.translation('toomanyfiles', '/usr/share/locale')
 _ = t.gettext
 
-
-version="20180810"
-
-def version_date():
-    versio=version.replace("+","")
-    return datetime.date(int(versio[:-4]),  int(versio[4:-2]),  int(versio[6:]))
 
 class RecSession:
     def __init__(self):

@@ -5,6 +5,7 @@ from mangenerator import Man
 import datetime
 import gettext
 import os
+import site
 
 class Doxygen(Command):
     description = "Create/update doxygen documentation in doc/html"
@@ -21,7 +22,37 @@ class Doxygen(Command):
         os.chdir("doc")
         os.system("doxygen Doxyfile")
         os.chdir("..")
-        
+
+class Video(Command):
+    description = "Create video/GIF from console ouput"
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        os.chdir("doc/ttyrec")
+        os.system("ttyrecgenerator --output ttyrecgenerator_howto_es 'python3 howto.py --language es' --video")
+        os.system("ttyrecgenerator --output ttyrecgenerator_howto_en 'python3 howto.py --language en' --video")
+        os.chdir("../..")
+
+
+class Uninstall(Command):
+    description = "Uninstall installed files with install"
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        os.system("rm -Rf {}/ttyrecgenerator*".format(site.getsitepackages()[0]))
+        os.system("rm /usr/bin/ttyrecgenerator")
 
 class Doc(Command):
     description = "Update man pages and translations"
@@ -67,12 +98,6 @@ class Doc(Command):
         man.paragraph(_("Create two directories called 'example' and 'example_directories' in the current working directory and fill it with example files with date and time patterns."), 3)
         man.save()
 
-def video():
-    os.chdir("doc/ttyrec")
-    shell("ttyrecgenerator --output ttyrecgenerator_howto_es 'python3 howto.py --language es' --video")
-    shell("ttyrecgenerator --output ttyrecgenerator_howto_en 'python3 howto.py --language en' --video")
-    os.chdir("../..")
-
 
 
     ########################################################################
@@ -96,6 +121,8 @@ setup(name='ttyrecgenerator',
     cmdclass={
         'doxygen': Doxygen,
         'doc': Doc,
+        'uninstall':Uninstall, 
+        'video': Video, 
              },
       zip_safe=False
      )

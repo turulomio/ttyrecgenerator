@@ -6,11 +6,10 @@ import os
 import subprocess
 import gettext
 import sys
-sys.path.append("/usr/lib/toomanyfiles")
 
-from libttyrecgenerator import RecSession
+from ttyrecgenerator import RecSession
 # I had a lot of problems with UTF-8. LANG must be es_ES.UTF-8 to work
-gettext.install('toomanyfiles', '/usr/share/locale')
+gettext.install('ttyrecgenerator', 'locale')
 
 parser=argparse.ArgumentParser(description='HOWTO to save with ttyrec', formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument('--language', help=_("Sets output language"), action="store",default='en')

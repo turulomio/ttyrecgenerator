@@ -55,8 +55,8 @@ class RecSession:
 
     def change_language(self, language):
         if language=="en":
-            gettext.install('toomanyfiles', 'badlocale')
+            gettext.install('ttyrecgenerator', 'badlocale')
         else:
-            lang1=gettext.translation('toomanyfiles', '/usr/share/locale', languages=[language])
+            lang1=gettext.translation('ttyrecgenerator', 'locale', languages=[language])
             lang1.install()
 

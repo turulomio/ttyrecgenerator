@@ -1,19 +1,30 @@
-Download and docs:
-    http://pypi.python.org/pypi/colorama
 Source code & Development:
-    https://github.com/tartley/colorama
+    https://ttyrecgenerator.sourceforge.io
+Doxygen documentation:
+    http://turulomio.users.sourceforge.net/doxygen/ttyrecgenerator/
 
 Description
 ===========
 
 License
 =======
+GPL-3
 
 Dependencies
 ============
 
-None, other than Python. Tested on Python 2.5.5, 2.6.5, 2.7, 3.1.2, 3.2, 3.3,
-3.4 and 3.5.
+None, other than Python. Tested on Python 3 
 
 Usage
 =====
+
+
+Changelog
+=========
+0.2.2
+  * Improving README
+0.2.0
+  * Solved problems with internacionalization distribution
+0.1.0
+  * Basic funcionality
+

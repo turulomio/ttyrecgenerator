@@ -21,6 +21,7 @@ class Doxygen(Command):
         print("Creating Doxygen Documentation")
         os.chdir("doc")
         os.system("doxygen Doxyfile")
+        os.system("rsync -avzP -e 'ssh -l turulomio' html/ frs.sourceforge.net:/home/users/t/tu/turulomio/userweb/htdocs/doxygen/ttyrecgenerator/ --delete-after")
         os.chdir("..")
 
 class Video(Command):
@@ -53,6 +54,9 @@ class Uninstall(Command):
     def run(self):
         os.system("rm -Rf {}/ttyrecgenerator*".format(site.getsitepackages()[0]))
         os.system("rm /usr/bin/ttyrecgenerator")
+        os.system("rm /usr/share/locale/es/LC_MESSAGES/ttyrecgenerator.mo")
+        os.system("rm /usr/share/man/man1/ttyrecgenerator.1")
+        os.system("rm /usr/share/man/es/man1/ttyrecgenerator.1")
 
 class Doc(Command):
     description = "Update man pages and translations"
@@ -99,23 +103,34 @@ class Doc(Command):
         man.save()
     ########################################################################
 
+with open('README.rst', encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(name='ttyrecgenerator',
-      version=__version__,
-      description='Python module to save console output into a GIF or a video',
-      url='https://ttyrecgenerator.sourceforge.io/',
-      author='Turulomio',
-      author_email='turulomio@yahoo.es',
-      license='GPL-3',
-      packages=['ttyrecgenerator'],
-      entry_points = {'console_scripts': ['ttyrecgenerator=ttyrecgenerator.cmd_ttyrecgenerator:main',
-                                          ],
-                     },
-      data_files=[ ('locale/es/LC_MESSAGES/', ['locale/es/LC_MESSAGES/ttyrecgenerator.mo']),
+     version=__version__,
+     description='Python module to save console output into a GIF or a video',
+     long_description=long_description,
+     long_description_content_type='text/markdown',
+     classifiers=['Development Status :: 4 - Beta',
+                  'Intended Audience :: Developers',
+                  'Topic :: Software Development :: Build Tools',
+                  'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+                  'Programming Language :: Python :: 3',
+                 ], 
+     keywords='ttyrec save console output',
+     url='https://ttyrecgenerator.sourceforge.io/',
+     author='Turulomio',
+     author_email='turulomio@yahoo.es',
+     license='GPL-3',
+     packages=['ttyrecgenerator'],
+     entry_points = {'console_scripts': ['ttyrecgenerator=ttyrecgenerator.cmd_ttyrecgenerator:main',
+                                        ],
+                    },
+     data_files=[ ('/usr/share/locale/es/LC_MESSAGES/', ['locale/es/LC_MESSAGES/ttyrecgenerator.mo']),
                         ('/usr/share/man/man1/', ['man/man1/ttyrecgenerator.1']), 
                         ('/usr/share/man/es/man1/', ['man/es/man1/ttyrecgenerator.1'])
                ] , 
-               
-    cmdclass={
+     cmdclass={
         'doxygen': Doxygen,
         'doc': Doc,
         'uninstall':Uninstall, 

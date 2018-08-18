@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-18 09:53+0200\n"
+"POT-Creation-Date: 2018-08-18 10:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,44 +47,17 @@ msgstr ""
 msgid "Sets output language"
 msgstr ""
 
-msgid "This is a video to show how to use 'toomanyfiles' command"
+msgid "This is a video to show how to use 'ttyrecgenerator' command"
 msgstr ""
 
-msgid "We are going to create an example directory to learn how to use it"
+msgid "First we have to create a unix command. This file in doc/ttyrec directory is an example. We display it:"
 msgstr ""
 
-msgid "We are going to see the 10 last files of this directory"
+msgid "Now we are going to execute it with:"
 msgstr ""
 
-msgid "We can see files with temporal pattern 'YYYYmmdd HHMM' with a day variation"
+msgid "A file called ttyrecgenerator_howto_es.gif is generated"
 msgstr ""
 
-msgid "We use to find this kind of files in automatic backups, logs, ..."
-msgstr ""
-
-msgid "If we want to save our disk space and we want to keep some of them, we can use TooManyFiles program"
-msgstr ""
-
-msgid "So, We want to keep the last 5 files because they are too recent."
-msgstr ""
-
-msgid "We want to keep the first file of each month from the rest of the files until a max number the files of 15."
-msgstr ""
-
-msgid "We enter in the example directory."
-msgstr ""
-
-msgid "We make a simulation with --pretend"
-msgstr ""
-
-msgid "We analyze the result with the output.."
-msgstr ""
-
-msgid "We like the result, so we can delete files replacing --pretend by --remove. Selected files will be removed permanently"
-msgstr ""
-
-msgid "We list the files remaining"
-msgstr ""
-
-msgid "That's all"
+msgid "If you want to generate a video use --video parameter"
 msgstr ""

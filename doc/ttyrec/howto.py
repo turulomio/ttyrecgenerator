@@ -5,11 +5,12 @@ import colorama
 import os
 import subprocess
 import gettext
+import pkg_resources
 import sys
 
 from ttyrecgenerator import RecSession
 # I had a lot of problems with UTF-8. LANG must be es_ES.UTF-8 to work
-gettext.install('ttyrecgenerator', 'locale')
+gettext.install('ttyrecgenerator', pkg_resources.resource_filename('ttyrecgenerator', 'locale'))
 
 parser=argparse.ArgumentParser(description='HOWTO to save with ttyrec', formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument('--language', help=_("Sets output language"), action="store",default='en')
@@ -47,8 +48,9 @@ time.sleep(2)
 r.comment("# " + _("We list the files remaining"))
 r.command("ls -la")
 
-os.system("rm -Rf ../example")
-os.system("rm -Rf ../example_directories")
+os.chdir("..")
+os.system("rm -Rf example")
+os.system("rm -Rf example_directories")
 r.comment("# " + _("That's all"))
 time.sleep(20)
 sys.exit(0)

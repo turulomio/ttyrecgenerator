@@ -6,6 +6,7 @@ import time
 import colorama
 import datetime
 import gettext
+import locale
 import os
 import pkg_resources
 import subprocess
@@ -24,22 +25,28 @@ class RecSession:
     def __init__(self):
         self.__hostname="MyLinux"
         self.__cwd="/home/ttyrec/"
-        
+        self.__language="en"
+
     def path(self):
         return "{} {}".format(colorama.Fore.RED + "sg" + colorama.Style.RESET_ALL, colorama.Fore.BLUE + "/ttyrec/ # " + colorama.Style.RESET_ALL)
 
     ## # must be added to s
-    def comment(self, s, sleep=4):
+    def comment(self, s, sleep=3):
         print(self.path()+ colorama.Fore.YELLOW + s + colorama.Style.RESET_ALL)
         time.sleep(sleep)
 
-    def command(self, s, sleep=6):
+    def command(self, s, sleep=5):
+        new_env = dict( os.environ )
+        if self.__language=="en":
+             new_env['LC_ALL'] = 'C'
+        else:
+             new_env['LC_ALL'] = 'es_ES.UTF-8'
         print()
         print(self.path() + colorama.Fore.GREEN + s + colorama.Style.RESET_ALL)
-        print(subprocess.check_output(s,shell=True).decode('utf-8'))
+        p=subprocess.run(s,shell=True, env=new_env,stderr=subprocess.STDOUT)
         time.sleep(sleep)
 
-    def chdir(self, dir, sleep=6):
+    def chdir(self, dir, sleep=5):
         print()
         print(self.path() + colorama.Fore.GREEN + "cd " + dir + colorama.Style.RESET_ALL)
         os.chdir(dir)
@@ -47,7 +54,7 @@ class RecSession:
         time.sleep(sleep)
 
 
-    def command_pipe(self, c1,c2, sleep=6):
+    def command_pipe(self, c1,c2, sleep=5):
         cmd = "{}|{}".format(c1,c2)
         print()
         print(self.path() + colorama.Fore.GREEN + cmd + colorama.Style.RESET_ALL)
@@ -58,9 +65,10 @@ class RecSession:
 
 
     def change_language(self, language):
+        self.__language=language
         if language=="en":
             gettext.install('ttyrecgenerator', 'badlocale')
         else:
-            lang1=gettext.translation('ttyrecgenerator', 'locale', languages=[language])
-            lang1.install()
+            t = gettext.translation('ttyrecgenerator', pkg_resources.resource_filename('ttyrecgenerator', "locale"), languages=[language])
+            t.install()
 

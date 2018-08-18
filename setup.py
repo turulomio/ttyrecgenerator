@@ -5,6 +5,7 @@ from mangenerator import Man
 import datetime
 import gettext
 import os
+import platform
 import site
 
 class Doxygen(Command):
@@ -52,11 +53,11 @@ class Uninstall(Command):
         pass
 
     def run(self):
-        os.system("rm -Rf {}/ttyrecgenerator*".format(site.getsitepackages()[0]))
-        os.system("rm /usr/bin/ttyrecgenerator")
-        os.system("rm /usr/share/locale/es/LC_MESSAGES/ttyrecgenerator.mo")
-        os.system("rm /usr/share/man/man1/ttyrecgenerator.1")
-        os.system("rm /usr/share/man/es/man1/ttyrecgenerator.1")
+        if platform.system()=="Linux":
+            os.system("rm -Rf {}/ttyrecgenerator*".format(site.getsitepackages()[0]))
+            os.system("rm /usr/bin/ttyrecgenerator")
+            os.system("rm /usr/share/man/man1/ttyrecgenerator.1")
+            os.system("rm /usr/share/man/es/man1/ttyrecgenerator.1")
 
 class Doc(Command):
     description = "Update man pages and translations"
@@ -72,20 +73,18 @@ class Doc(Command):
         #es
         os.system("xgettext -L Python --no-wrap --no-location --from-code='UTF-8' -o locale/ttyrecgenerator.pot *.py ttyrecgenerator/*.py doc/ttyrec/*.py")
         os.system("msgmerge -N --no-wrap -U locale/es.po locale/ttyrecgenerator.pot")
-        os.system("msgfmt -cv -o locale/es/LC_MESSAGES/ttyrecgenerator.mo locale/es.po")
+        os.system("msgfmt -cv -o ttyrecgenerator/locale/es/LC_MESSAGES/ttyrecgenerator.mo locale/es.po")
 
         for language in ["en", "es"]:
             self.mangenerator(language)
 
+    ## Create man pages for parameter language
     def mangenerator(self, language):
-        """
-            Create man pages for parameter language
-        """
         if language=="en":
             gettext.install('ttyrecgenerator', 'badlocale')
             man=Man("man/man1/ttyrecgenerator")
         else:
-            lang1=gettext.translation('ttyrecgenerator', 'locale', languages=[language])
+            lang1=gettext.translation('ttyrecgenerator', 'ttyrecgenerator/locale', languages=[language])
             lang1.install()
             man=Man("man/es/man1/ttyrecgenerator")
         print("  - DESCRIPTION in {} is {}".format(language, _("DESCRIPTION")))
@@ -105,6 +104,13 @@ class Doc(Command):
 
 with open('README.rst', encoding='utf-8') as f:
     long_description = f.read()
+
+if platform.system()=="Linux":
+    data_files=[('/usr/share/man/man1/', ['man/man1/ttyrecgenerator.1']), 
+                ('/usr/share/man/es/man1/', ['man/es/man1/ttyrecgenerator.1'])
+               ]
+else:
+    data_files=[]
 
 setup(name='ttyrecgenerator',
      version=__version__,
@@ -126,15 +132,13 @@ setup(name='ttyrecgenerator',
      entry_points = {'console_scripts': ['ttyrecgenerator=ttyrecgenerator.cmd_ttyrecgenerator:main',
                                         ],
                     },
-     data_files=[ ('/usr/share/locale/es/LC_MESSAGES/', ['locale/es/LC_MESSAGES/ttyrecgenerator.mo']),
-                        ('/usr/share/man/man1/', ['man/man1/ttyrecgenerator.1']), 
-                        ('/usr/share/man/es/man1/', ['man/es/man1/ttyrecgenerator.1'])
-               ] , 
+     data_files=data_files,
      cmdclass={
         'doxygen': Doxygen,
         'doc': Doc,
         'uninstall':Uninstall, 
         'video': Video, 
              },
-      zip_safe=False
+      zip_safe=False,
+      include_package_data=True
      )

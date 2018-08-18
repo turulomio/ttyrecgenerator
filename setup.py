@@ -132,6 +132,7 @@ setup(name='ttyrecgenerator',
      entry_points = {'console_scripts': ['ttyrecgenerator=ttyrecgenerator.cmd_ttyrecgenerator:main',
                                         ],
                     },
+     install_requires=['colorama','mangenerator','setuptools'],
      data_files=data_files,
      cmdclass={
         'doxygen': Doxygen,

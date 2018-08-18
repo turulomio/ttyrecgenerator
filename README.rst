@@ -12,15 +12,21 @@ GPL-3
 
 Dependencies
 ============
-
-None, other than Python. Tested on Python 3 
+  * https://www.python.org/, as the main programming language.
+  * https://pypi.org/project/colorama/, to give console colors.
+  * https://pypi.org/project/mangenerator/, to generate man files.
+  * https://pypi.org/project/ttyrecgenerator/, to generate animated gifs.
 
 Usage
 =====
+  You must see the doc/ttyrec/howto.py script, and generate the video with  ttyrecgenerator command
 
 
 Changelog
 =========
+0.3.0
+  * Console output command is now in color
+  * Output commands is now localized
 0.2.2
   * Improving README
 0.2.0

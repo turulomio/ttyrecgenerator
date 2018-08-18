@@ -7,6 +7,7 @@ Nueva release
  ) python3 setup.py doc
 4) python3 setup.py doxygen
 5) python setup.py sdist upload -r pypi        Para subirlo a python
-6) Subir versión al subversion
-6) Crear un nuevo ebuild con la nueva versión
-8) Subirlo al subversion del portage
+6) Subir el tar.gz a Sourceforege
+7) Hacer un commit para subir versión al subversion
+8) Crear un nuevo ebuild con la nueva versión
+9) Subirlo al subversion del portage

@@ -37,6 +37,8 @@ Usage
 
 Changelog
 =========
+0.4.0
+  * Added ttyrecgenerator howto in gif and video
 0.3.0
   * Console output command is now in color
   * Output commands is now localized

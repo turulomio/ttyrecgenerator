@@ -4,6 +4,8 @@ Doxygen documentation:
     http://turulomio.users.sourceforge.net/doxygen/ttyrecgenerator/
 Main developer web page:
     http://turulomio.users.sourceforge.net/en/proyectos.html
+Gentoo ebuild
+    You can find a Gentoo ebuild in https://sourceforge.net/p/xulpymoney/code/HEAD/tree/myportage/dev-python/ttyrecgenerator/
 
 Description
 ===========
@@ -33,7 +35,6 @@ You can see this animated gif:
    :width: 600px
    :scale: 100 %
    :align: center
-
 
 Changelog
 =========

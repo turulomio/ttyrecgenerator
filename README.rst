@@ -39,7 +39,8 @@ You can see this animated gif:
 Changelog
 =========
 X.X.X
-  * Improved README.rst documentation
+  * Added command_fake in RecSession to pretend a command
+  * Improved README.rst and doxygen documentation
   * Added project icon
 0.4.0
   * Added ttyrecgenerator howto in gif and video

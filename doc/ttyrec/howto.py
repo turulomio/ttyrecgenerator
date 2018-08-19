@@ -16,6 +16,6 @@ r.comment("# " + _("This is a video to show how to use 'ttyrecgenerator' command
 r.comment("# " + _("First we have to create a unix command. This file in doc/ttyrec directory is an example. We display it:"))
 r.command("cat howto.py")
 r.comment("# " + _("Now we are going to execute it with:"))
-r.comment("ttyrecgenerator --output ttyrecgenerator_howto_es 'python3 howto.py --language es'")
+r.command_fake("ttyrecgenerator --output ttyrecgenerator_howto_es 'python3 howto.py --language es'")
 r.comment("# " +_("A file called ttyrecgenerator_howto_es.gif is generated"))
 r.comment("# " + _("If you want to generate a video use --video parameter"))

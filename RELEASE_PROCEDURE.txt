@@ -1,13 +1,14 @@
 Nueva release
 =============
-1) Cambiar la versión y la fecha en __init__.py
-2) Modificar el Changelog en el fichero README
-3) python3 setup.py doc. 
- ) lokalice es.po
- ) python3 setup.py doc
-4) python3 setup.py doxygen
-5) python setup.py sdist upload -r pypi        Para subirlo a python
-6) Subir el tar.gz a Sourceforege
-7) Hacer un commit para subir versión al subversion
-8) Crear un nuevo ebuild con la nueva versión
-9) Subirlo al subversion del portage
+01) Cambiar la versión y la fecha en __init__.py
+02) Modificar el Changelog en el fichero README
+03) python3 setup.py doc. 
+  ) lokalice es.po
+  ) python3 setup.py doc
+04) python3 setup.py doxygen
+05) If video output changes execute: python3 setup.py video
+06) python setup.py sdist upload -r pypi        Para subirlo a python
+07) Subir el tar.gz a Sourceforege
+08) Hacer un commit para subir versión al subversion
+09) Crear un nuevo ebuild con la nueva versión
+10) Subirlo al subversion del portage

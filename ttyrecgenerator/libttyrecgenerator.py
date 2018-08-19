@@ -9,6 +9,7 @@ import gettext
 import locale
 import os
 import pkg_resources
+import platform
 import subprocess
 
 try:

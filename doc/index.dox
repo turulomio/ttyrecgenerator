@@ -3,7 +3,7 @@
 Introduction
 ============
 
-TtyRecGeneator is a python module to generate GIF and VIDEO from console output
+TtyRecGenerator is a python module to generate GIF and VIDEO from console output
 
 The Sourceforge web page is located in <a href="https://too-many-files.sourceforge.io/">https://too-many-files.sourceforge.io/</a>
 
@@ -27,9 +27,11 @@ Software used to develop TtyRecGenerator
 TtyRecGenerator depends on the following software:
 - <a target="_blank" href="https://www.python.org/">Python3</a>, as the main programming language.
 - <a target="_blank" href="https://pypi.org/project/colorama/">Colorama</a>, to give color to console output.
-
-
-
+- <a target="_blank" href="https://pypi.org/project/mangenerator/">ManGenerator</a>, to generate man files.
+- <a target="_blank" href="https://invisible-island.net/xterm/">Xterm</a>, as tty used to rec with ttyrec.
+- <a target="_blank" href="https://github.com/mjording/ttyrec">Ttyrec</a>, system to record console output.
+- <a target="_blank" href="https://github.com/icholy/ttygif">Ttygif</a>, program to generate animated gif from ttyrec saves.
+- <a target="_blank" href="https://www.ffmpeg.org/">Ffmpeg</a>, to generate videos from animated gifs.
 
 
 */

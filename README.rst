@@ -20,7 +20,6 @@ Dependencies
 * https://www.python.org/, as the main programming language.
 * https://pypi.org/project/colorama/, to give console colors.
 * https://pypi.org/project/mangenerator/, to generate man files.
-* https://pypi.org/project/ttyrecgenerator/, to generate animated gifs.
 * https://invisible-island.net/xterm/, as tty used to rec with ttyrec.
 * https://github.com/mjording/ttyrec, system to record console output.
 * https://github.com/icholy/ttygif, program to generate animated gif from ttyrec saves.
@@ -38,7 +37,7 @@ You can see this animated gif:
 
 Changelog
 =========
-X.X.X
+0.5.0
   * Added command_fake in RecSession to pretend a command
   * Improved README.rst and doxygen documentation
   * Added project icon

@@ -1,8 +1,5 @@
 import datetime
-from .libttyrecgenerator import RecSession 
+from .libttyrecgenerator import RecSession, platform_incompatibility
 
-#language = gettext.translation ('ttyrecgenerator', 'locale' )
-#language.install()
-
-__version__ = '0.4.0'
-__versiondate__=datetime.date(2018,8,18)
+__version__ = '0.5.0'
+__versiondate__=datetime.date(2018,8,19)

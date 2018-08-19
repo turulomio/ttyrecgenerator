@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-18 17:03+0200\n"
+"POT-Creation-Date: 2018-08-19 07:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid "Create an animated gif/video from the output of the program passed as parameter"
 msgstr ""
 
-msgid "Developed by Mariano Muñoz 2018-{}"
+msgid "Developed by Mariano Muñoz 2018-{} under GNU General Public License 3.0"
 msgstr ""
 
 msgid "Path to program"
@@ -42,6 +42,9 @@ msgid "Ttyrec output path"
 msgstr ""
 
 msgid "Makes a simulation and doesn't remove files"
+msgstr ""
+
+msgid "This funcionality doen't work on {}. Please move to Linux."
 msgstr ""
 
 msgid "Sets output language"

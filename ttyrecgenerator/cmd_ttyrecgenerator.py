@@ -17,7 +17,6 @@ try:
     t = gettext.translation('ttyrecgenerator', pkg_resources.resource_filename('ttyrecgenerator', "locale"))
     _ = t.gettext
 except:
-    print("Error loading translation")
     _ = str
 
 def main():
@@ -29,12 +28,15 @@ def main():
     parser.add_argument('program',  help=_("Path to program"))
     parser.add_argument('--output', help=_("Ttyrec output path"), action="store", default="ttyrecord.rec")
     parser.add_argument('--video', help=_("Makes a simulation and doesn't remove files"), action="store_true", default=False)
+    parser.add_argument('--lc_all', help=_("Operating system environment variable LC_ALL to force translation"), action="store", default="C")
     args=parser.parse_args()
 
     if platform.system()!="Linux":
-        print(platform_incompatibility())
+        platform_incompatibility()
     else:
-        subprocess.run(["xterm", "-hold", "-bg", "black", "-geometry", "140x400", "-fa", "monaco", "-fs", "18", "-fg", "white", "-e", "ttyrec -e '{0}' {1}; ttygif {1}".format(args.program, args.output)])
+        new_env = dict( os.environ )
+        new_env['LC_ALL'] = args.lc_all
+        subprocess.run(["xterm", "-hold", "-bg", "black", "-geometry", "140x400", "-fa", "monaco", "-fs", "18", "-fg", "white", "-e", "ttyrec -e '{0}' {1}; ttygif {1}".format(args.program, args.output)],env=new_env, stderr=subprocess.STDOUT)
         os.system("mv tty.gif {}.gif".format(args.output))
         if args.video==True:
             subprocess.run(["ffmpeg", "-i", "{}.gif".format(args.output), "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "{}.mp4".format(args.output)])

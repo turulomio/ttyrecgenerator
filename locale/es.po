@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TooManyFiles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-19 07:01+0200\n"
+"POT-Creation-Date: 2018-08-19 09:44+0200\n"
 "PO-Revision-Date: 2015-03-22 18:51+0100\n"
 "Last-Translator: root <turulomio@yahoo.es>\n"
 "Language-Team: Spanish\n"
@@ -45,11 +45,11 @@ msgstr "Ruta de salida de Ttyrec"
 msgid "Makes a simulation and doesn't remove files"
 msgstr "Realiza una simulación y no borra los ficheros"
 
+msgid "Operating system environment variable LC_ALL to force translation"
+msgstr "Variable LC_ALL del entorno del sistema operativo para forzar la traducción"
+
 msgid "This funcionality doen't work on {}. Please move to Linux."
 msgstr "Esta funcionalidad no funciona en {}. Por favor usa Linux."
-
-msgid "Sets output language"
-msgstr "Establece el lenguaje de salida"
 
 msgid "This is a video to show how to use 'ttyrecgenerator' command"
 msgstr "Esto es un video para mostrar como usar el comando 'ttyrecgenerator'"
@@ -65,3 +65,6 @@ msgstr "Un fichero llamado ttyrecgenerator_howto_es.gif se ha generado"
 
 msgid "If you want to generate a video use --video parameter"
 msgstr "Si quieres generar un video usa el parámetro --video"
+
+msgid "If your script support several languages, change --lc_all to change to your desired LC_ALL environment"
+msgstr "Si tu script soporta varios idiomas, cambia --lc_all para cambiar a la variable de entorno LC_ALL deseada"

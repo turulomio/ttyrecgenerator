@@ -1,6 +1,5 @@
 ## @namespace ttyrecgenerator.libttyrecgenerator
 ## @brief Library to generate gifs and video from console output
-
 import argparse
 import time
 import colorama
@@ -16,7 +15,6 @@ try:
     t = gettext.translation('ttyrecgenerator', pkg_resources.resource_filename('ttyrecgenerator', "locale"))
     _ = t.gettext
 except:
-    print("Error loading translation")
     _ = str
 
 ## @brief Class with predefinied pauses and colors. Allows to launch commands and pretend it's launch
@@ -26,7 +24,6 @@ class RecSession:
     def __init__(self):
         self.__hostname="MyLinux"
         self.__cwd="/home/ttyrec/"
-        self.__language="en"
 
     ## This function emulates the hostnmae and the current directory, with the colors of a unix tty
     def path(self):
@@ -41,13 +38,8 @@ class RecSession:
 
     ## This function launches a command and prints the command in green
     def command(self, s, sleep=5):
-        new_env = dict( os.environ )
-        if self.__language=="en":
-             new_env['LC_ALL'] = 'C'
-        else:
-             new_env['LC_ALL'] = 'es_ES.UTF-8'
         print(self.path() + colorama.Fore.GREEN + s + colorama.Style.RESET_ALL)
-        p=subprocess.run(s,shell=True, env=new_env,stderr=subprocess.STDOUT)
+        p=subprocess.run(s,shell=True, stderr=subprocess.STDOUT)
         time.sleep(sleep)
 
     ## This method changes current directory and shows a cd command in green
@@ -75,14 +67,5 @@ class RecSession:
         print(self.path() + colorama.Fore.GREEN + s + colorama.Style.RESET_ALL)
         time.sleep(sleep)
 
-    ## This method changes current translation catalog
-    def change_language(self, language):
-        self.__language=language
-        if language=="en":
-            gettext.install('ttyrecgenerator', 'badlocale')
-        else:
-            t = gettext.translation('ttyrecgenerator', pkg_resources.resource_filename('ttyrecgenerator', "locale"), languages=[language])
-            t.install()
-
 def platform_incompatibility():
-    return colorama.Style.BRIGHT + colorama.Fore.RED +  _("This funcionality doen't work on {}. Please move to Linux.").format(platform.system()) + colorama.Style.RESET_ALL
+    print( colorama.Style.BRIGHT + colorama.Fore.RED +  _("This funcionality doen't work on {}. Please move to Linux.").format(platform.system()) + colorama.Style.RESET_ALL)

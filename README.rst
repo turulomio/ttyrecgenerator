@@ -37,6 +37,8 @@ You can see this animated gif:
 
 Changelog
 =========
+X.X.X
+  * Replaces --language to --lc_all. Now translation are more easy
 0.5.0
   * Added command_fake in RecSession to pretend a command
   * Improved README.rst and doxygen documentation

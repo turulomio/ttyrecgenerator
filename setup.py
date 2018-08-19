@@ -22,7 +22,7 @@ class Doxygen(Command):
 
     def run(self):
         if platform.system()!="Linux":
-            print(platform_incompatibility())
+            platform_incompatibility()
             return
         print("Creating Doxygen Documentation")
         os.chdir("doc")
@@ -42,11 +42,11 @@ class Video(Command):
 
     def run(self):
         if platform.system()!="Linux":
-            print(platform_incompatibility())
+            platform_incompatibility()
             return
         os.chdir("doc/ttyrec")
-        os.system("ttyrecgenerator --output ttyrecgenerator_howto_es 'python3 howto.py --language es' --video")
-        os.system("ttyrecgenerator --output ttyrecgenerator_howto_en 'python3 howto.py --language en' --video")
+        os.system("ttyrecgenerator --output ttyrecgenerator_howto_es --lc_all es_ES.UTF-8 'python3 howto.py' --video")
+        os.system("ttyrecgenerator --output ttyrecgenerator_howto_en --lc_all C 'python3 howto.py' --video")
         os.chdir("../..")
 
 
@@ -62,7 +62,7 @@ class Uninstall(Command):
 
     def run(self):
         if platform.system()!="Linux":
-            print(platform_incompatibility())
+            platform_incompatibility()
             return
         os.system("rm -Rf {}/ttyrecgenerator*".format(site.getsitepackages()[0]))
         os.system("rm /usr/bin/ttyrecgenerator")
@@ -81,7 +81,7 @@ class Doc(Command):
 
     def run(self):
         if platform.system()!="Linux":
-            print(platform_incompatibility())
+            platform_incompatibility()
             return
         #es
         os.system("xgettext -L Python --no-wrap --no-location --from-code='UTF-8' -o locale/ttyrecgenerator.pot *.py ttyrecgenerator/*.py doc/ttyrec/*.py")
@@ -94,7 +94,7 @@ class Doc(Command):
     ## Create man pages for parameter language
     def mangenerator(self, language):
         if platform.system()!="Linux":
-            print(platform_incompatibility())
+            platform_incompatibility()
             return
 
         if language=="en":

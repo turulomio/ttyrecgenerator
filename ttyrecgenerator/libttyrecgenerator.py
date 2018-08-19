@@ -23,11 +23,11 @@ except:
 class RecSession:
     def __init__(self):
         self.__hostname="MyLinux"
-        self.__cwd="/home/ttyrec/"
+        self.__cwd="/ttyrec"
 
     ## This function emulates the hostnmae and the current directory, with the colors of a unix tty
     def path(self):
-        return "{} {}".format(colorama.Style.BRIGHT + colorama.Fore.RED + "sg" + colorama.Style.RESET_ALL, colorama.Style.BRIGHT + colorama.Fore.BLUE + "/ttyrec/ # " + colorama.Style.RESET_ALL)
+        return "{} {}".format(colorama.Style.BRIGHT + colorama.Fore.RED + self.__hostname + colorama.Style.RESET_ALL, colorama.Style.BRIGHT + colorama.Fore.BLUE + self.__cwd + " # " + colorama.Style.RESET_ALL)
 
     ## This function prints comments is yellow
     ## # must be added to s
@@ -43,7 +43,11 @@ class RecSession:
         time.sleep(sleep)
 
     ## This method changes current directory and shows a cd command in green
-    def chdir(self, dir, sleep=5):
+    ## @param dir Path to change to
+    ## @param new_cwd string with the new path to show in console
+    ## @param sleep Integer with the number of seconds to sleep after function
+    def chdir(self, dir, new_cwd, sleep=5):
+        self.__cwd=new_cwd
         print(self.path() + colorama.Fore.GREEN + "cd " + dir + colorama.Style.RESET_ALL)
         os.chdir(dir)
         print()
@@ -66,6 +70,7 @@ class RecSession:
     def command_fake(self, s, sleep=5):
         print(self.path() + colorama.Fore.GREEN + s + colorama.Style.RESET_ALL)
         time.sleep(sleep)
+
 
 def platform_incompatibility():
     print( colorama.Style.BRIGHT + colorama.Fore.RED +  _("This funcionality doen't work on {}. Please move to Linux.").format(platform.system()) + colorama.Style.RESET_ALL)

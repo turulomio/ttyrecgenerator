@@ -45,8 +45,8 @@ class Video(Command):
             platform_incompatibility()
             return
         os.chdir("doc/ttyrec")
-        os.system("ttyrecgenerator --output ttyrecgenerator_howto_es --lc_all es_ES.UTF-8 'python3 howto.py' --video")
-        os.system("ttyrecgenerator --output ttyrecgenerator_howto_en --lc_all C 'python3 howto.py' --video")
+        os.system("ttyrecgenerator --output ttyrecgenerator_howto_es --lc_all es_ES.UTF-8 'python3 howto.py'")
+        os.system("ttyrecgenerator --output ttyrecgenerator_howto_en --lc_all C 'python3 howto.py'")
         os.chdir("../..")
 
 

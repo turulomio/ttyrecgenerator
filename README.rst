@@ -1,3 +1,6 @@
+THIS PROJECT IS NOW ARCHIVE DUE TO TTREC IS MORE THAN 10 YEARS WITHOUT A MODIFICATION. ASCIINEMA IS A BETTER SOLUTION
+
+
 Source code & Development:
     https://ttyrecgenerator.sourceforge.io
 Doxygen documentation:
